@@ -8,8 +8,28 @@
 
 import Cocoa
 
-class MainSplitViewController: NSSplitViewController {
+@objc protocol FiltersPresenter {
+    @objc var filtersController: NSArrayController? { get set }
+}
 
-    let filters = [Filter(ciFilter: CIFilter(name: "CIColorControls")!, attributes: [])]
+class MainSplitViewController: NSSplitViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        for splitViewItem in splitViewItems {
+            guard let splitView = splitViewItem.viewController as? FiltersPresenter else { continue }
+            splitView.filtersController = filtersController
+        }
+        
+        print(self.filters.count)
+    }
+
+    
+    @objc dynamic var filters = [Filter(filterName: "Color Controls", ciFilter: CIFilter(name: "CIColorControls")!, attributes: [FilterAttribute(attributeName: "Brightness", key: kCIInputBrightnessKey, value: 0.0), FilterAttribute(attributeName: "Contrast", key: kCIInputContrastKey, value: 1.0), FilterAttribute(attributeName: "Saturation", key: kCIInputSaturationKey, value: 1.0)])]
+    
+    
+    @IBOutlet var filtersController: NSArrayController!
+    
 }
 

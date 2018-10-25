@@ -718,6 +718,7 @@
                         </connections>
                     </splitView>
                     <connections>
+                        <outlet property="filtersController" destination="pIV-KL-AZR" id="Xcb-QX-CpU"/>
                         <outlet property="splitView" destination="uPH-Rh-Ewt" id="NNt-fW-Cdw"/>
                         <segue destination="Y67-ld-UKj" kind="relationship" relationship="splitItems" id="tNn-Lz-FVc"/>
                         <segue destination="crP-1Q-FYV" kind="relationship" relationship="splitItems" id="Vqz-zX-xf0"/>
@@ -725,13 +726,18 @@
                     </connections>
                 </splitViewController>
                 <customObject id="rQJ-Hf-oOk" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <arrayController id="pIV-KL-AZR">
+                    <connections>
+                        <binding destination="ano-6X-lIc" name="contentArray" keyPath="filters" id="rMI-Ps-cCI"/>
+                    </connections>
+                </arrayController>
             </objects>
             <point key="canvasLocation" x="77" y="751"/>
         </scene>
-        <!--View Controller-->
+        <!--Attribute Table View Controller-->
         <scene sceneID="dAv-HB-u8O">
             <objects>
-                <viewController id="Q9i-wA-tY5" sceneMemberID="viewController">
+                <viewController id="Q9i-wA-tY5" customClass="AttributeTableViewController" customModule="Simple_Image_Editor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Oaf-5n-3P4">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -825,7 +831,7 @@
                                     <rect key="frame" x="1" y="283" width="448" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="kmn-w5-k8K">
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="kmn-w5-k8K">
                                     <rect key="frame" x="224" y="17" width="15" height="102"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -855,7 +861,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="655"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Ye-EG-5g1">
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="499" verticalCompressionResistancePriority="499" translatesAutoresizingMaskIntoConstraints="NO" id="1Ye-EG-5g1">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="655"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Image from iOS" id="ynX-0X-wm3"/>
                             </imageView>
@@ -872,10 +878,10 @@
             </objects>
             <point key="canvasLocation" x="-764" y="1458"/>
         </scene>
-        <!--View Controller-->
+        <!--Filter Table View Controller-->
         <scene sceneID="Y2b-nh-yDF">
             <objects>
-                <viewController id="crP-1Q-FYV" sceneMemberID="viewController">
+                <viewController id="crP-1Q-FYV" customClass="FilterTableViewController" customModule="Simple_Image_Editor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="sU0-2i-m9h">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -917,6 +923,9 @@
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
+                                                                    <connections>
+                                                                        <binding destination="SoI-zG-V17" name="value" keyPath="objectValue.name" id="Gwy-gv-87O"/>
+                                                                    </connections>
                                                                 </textField>
                                                             </subviews>
                                                             <constraints>
@@ -932,6 +941,11 @@
                                                     </prototypeCellViews>
                                                 </tableColumn>
                                             </tableColumns>
+                                            <connections>
+                                                <binding destination="crP-1Q-FYV" name="content" keyPath="filtersController.arrangedObjects" id="jpt-3l-OBh"/>
+                                                <binding destination="crP-1Q-FYV" name="selectionIndexes" keyPath="filtersController.selectionIndexes" previousBinding="jpt-3l-OBh" id="i3T-Mm-MkB"/>
+                                                <binding destination="crP-1Q-FYV" name="sortDescriptors" keyPath="filtersController.sortDescriptors" previousBinding="i3T-Mm-MkB" id="nmU-JQ-GML"/>
+                                            </connections>
                                         </tableView>
                                     </subviews>
                                 </clipView>

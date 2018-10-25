@@ -13,6 +13,8 @@
 		226D28E821824468000E5FFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 226D28E621824468000E5FFF /* Main.storyboard */; };
 		226D28F12182666F000E5FFF /* SliderTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D28F02182666F000E5FFF /* SliderTableCellView.swift */; };
 		226D28F321827008000E5FFF /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D28F221827008000E5FFF /* Filter.swift */; };
+		226D28F52182769F000E5FFF /* FilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D28F42182769F000E5FFF /* FilterTableViewController.swift */; };
+		226D28F721827730000E5FFF /* AttributeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D28F621827730000E5FFF /* AttributeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		226D28EA21824468000E5FFF /* Simple_Image_Editor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Simple_Image_Editor.entitlements; sourceTree = "<group>"; };
 		226D28F02182666F000E5FFF /* SliderTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderTableCellView.swift; sourceTree = "<group>"; };
 		226D28F221827008000E5FFF /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		226D28F42182769F000E5FFF /* FilterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewController.swift; sourceTree = "<group>"; };
+		226D28F621827730000E5FFF /* AttributeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				226D28E02182445E000E5FFF /* AppDelegate.swift */,
 				226D28F221827008000E5FFF /* Filter.swift */,
 				226D28E22182445E000E5FFF /* MainSplitViewController.swift */,
+				226D28F42182769F000E5FFF /* FilterTableViewController.swift */,
+				226D28F621827730000E5FFF /* AttributeTableViewController.swift */,
 				226D28F02182666F000E5FFF /* SliderTableCellView.swift */,
 				226D28E421824468000E5FFF /* Assets.xcassets */,
 				226D28E621824468000E5FFF /* Main.storyboard */,
@@ -141,7 +147,9 @@
 			files = (
 				226D28F12182666F000E5FFF /* SliderTableCellView.swift in Sources */,
 				226D28F321827008000E5FFF /* Filter.swift in Sources */,
+				226D28F721827730000E5FFF /* AttributeTableViewController.swift in Sources */,
 				226D28E32182445E000E5FFF /* MainSplitViewController.swift in Sources */,
+				226D28F52182769F000E5FFF /* FilterTableViewController.swift in Sources */,
 				226D28E12182445E000E5FFF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

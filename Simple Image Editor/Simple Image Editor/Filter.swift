@@ -9,23 +9,27 @@
 import Foundation
 import CoreImage
 
-class FilterAttribute: NSObject {
+@objc class FilterAttribute: NSObject {
     
     @objc dynamic var name: String
+    @objc dynamic var key: String
     @objc dynamic var value: CGFloat
     
-    init(name: String, value: CGFloat) {
-        self.name = name
+    init(attributeName: String, key: String, value: CGFloat) {
+        self.name = attributeName
+        self.key = key
         self.value = value
     }
 }
 
-class Filter: NSObject {
+@objc class Filter: NSObject {
     
+    @objc dynamic var name: String
     @objc dynamic var ciFilter: CIFilter
     @objc dynamic var attributes: [FilterAttribute]
     
-    init(ciFilter: CIFilter, attributes: [FilterAttribute]) {
+    init(filterName: String, ciFilter: CIFilter, attributes: [FilterAttribute]) {
+        self.name = filterName
         self.ciFilter = ciFilter
         self.attributes = attributes
     }
